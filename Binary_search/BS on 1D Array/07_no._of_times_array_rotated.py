@@ -39,6 +39,12 @@ class Solution:
             mid = low + (high-low)//2
             if arr[mid] == target:
                 return mid
+            # If there are duplicates, only edge case is if arr[low] == arr[mid] == arr[high]
+            # If this condition is satisfied, we will just increment the low pointer and decrement the high pointer by one step. We will not perform the later steps until this condition is no longer satisfied. So, we will continue to the next iteration from this step.
+            if arr[low]==arr[mid]==arr[high]:
+                high-=1
+                low+=1
+                continue
             if arr[low]<=arr[mid]:
                 if arr[low]<=target and target<=arr[mid]:
                     high = mid-1
