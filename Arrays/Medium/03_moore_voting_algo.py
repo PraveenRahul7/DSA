@@ -25,6 +25,14 @@ Hence '1' is the majority element.
 """ 
 Moore Voting Algo Intution:
 
+Core Idea: 
+
+    The algorithm is based on the concept of canceling out different elements:
+
+    If you pair different elements, they effectively "cancel each other out."
+
+    The one that remains (if it exists as a majority) will be the answer.
+
 Intuition:
 
 If the array contains a majority element, its occurrence must be greater than the floor(N/2). Now, we can say that the count of minority elements and majority elements is equal up to a certain point in the array. So when we traverse through the array we try to keep track of the count of elements and the element itself for which we are tracking the count. 
@@ -56,6 +64,33 @@ def moore_voting_algo_majority_element(arr:List[int])->int:
             count+=1
         else:
             count-=1
+
+    # # Step 2: Verify the element
+    # if nums.count(element) > len(nums) // 2:
+    #     return element
+    # return -1  # In case there is no majority element
+
+    """
+    Step 1: Find a Candidate:
+            Initialize:
+
+            candidate → None
+
+            count → 0
+
+            Traverse the array:
+
+            If count is 0, pick the current element as the candidate.
+
+            If the element is the same as candidate, increase count.
+
+            If it's different, decrease count.
+
+    Step 2: Verify the Candidate:
+            After the first pass, the candidate may or may not be the majority element.
+
+
+    """
     return element
     
 
