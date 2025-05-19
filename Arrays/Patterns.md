@@ -2,6 +2,7 @@ Assumptions plays good !!. Assume everything works from 0 to i-1, so work to be 
 
 Lookup Patterns: 
     1. Two Sum -> Use Hashmap for lookup of complementary element and track the i. 
+    2. Prefix sum pattern->  Subarray sum equals K => Here we use hashmap as prefix count
 
 
 2 pointers:
