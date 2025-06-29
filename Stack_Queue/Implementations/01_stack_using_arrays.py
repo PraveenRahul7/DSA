@@ -47,7 +47,7 @@ class ThreadSafeMinStack(Generic[T]):
                 raise StackEmptyError("Cannot pop from empty stack")
 
             item = self._items.pop()
-            if item == self._min_stack[-1]:
+            if item == self._min_stack[-1]: #this is because the min element is no longer part of stack, so no use to keep it in min stack
                 self._min_stack.pop()
             return item
 
